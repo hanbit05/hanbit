@@ -36,6 +36,8 @@ public class Runner {
 		
 		System.out.println("------------------");
 		System.out.println(dog);	//toString()값이 나옴.
+		
+		//runner
 	}
 	
 }
