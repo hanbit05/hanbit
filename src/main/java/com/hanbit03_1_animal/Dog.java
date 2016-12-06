@@ -2,12 +2,15 @@ package com.hanbit03_1_animal;
 
 //161206 (3)
 
+import java.io.File;
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
 public class Dog {
 
 	//멤버변수
 	public static final String DEFAULT_NAME = "멍멍이"; //static : 클래스 내에서 하나만 존재하도록 
+	private boolean sit;
 	
 	//멤버변수에는 되도록 private혹은 public 써주기	
 	private String name;
@@ -69,5 +72,36 @@ public class Dog {
 		
 		this.color = color;
 	}
+	
+	
+	public void sitDown() {
+		sit = true;
+	}
+	
+	public void standUp() {
+		sit = false;
+	}
+	
+	public void draw() {
+		String fileName = "";
+		
+		if (sit) {
+			fileName = "dog_sitdown.txt";
+		}
+		else {
+			fileName = "dog_standup.txt";
+		}
+		
+		try {
+			File dogFile = new File(getClass().getResource("/" + fileName).toURI());
+			String dog = FileUtils.readFileToString(dogFile);
+			
+			System.out.println(dog);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 
 }

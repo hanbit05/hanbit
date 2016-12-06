@@ -1,5 +1,7 @@
 package com.hanbit03_1;
 
+import com.hanbit03_1_animal.Cat;
+
 //161206 (2)
 
 import com.hanbit03_1_animal.Dog;	//Dog클래스는 다른 패키지에 있으므로 import해야만 사용가능 
@@ -37,7 +39,21 @@ public class Runner {
 		System.out.println("------------------");
 		System.out.println(dog);	//toString()값이 나옴.
 		
-		//runner
+		
+		System.out.println("------------------");
+		dog.sitDown();
+		dog.draw();
+		dog.standUp();
+		
+		
+		System.out.println("------------------");
+		Cat cat = new Cat("길고양이", "줄무늬");
+		Cat cat2 = new Cat("페르시안", "흰색");
+		cat2.setName(null);
+		
+		System.out.println(cat);
+		System.out.println(cat2);
+	
 	}
 	
 }
