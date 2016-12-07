@@ -1,10 +1,12 @@
 package com.hanbit03_1_animal;
 
 //161206 (4)
+//161207
 
 import org.apache.commons.lang3.StringUtils;
+import com.Creature;
 
-public abstract class Animal {
+public abstract class Animal implements Creature {
 
 	public static final String DEFAULT_NAME = "무명이";
 	
@@ -23,6 +25,16 @@ public abstract class Animal {
 	@Override
 	public String toString() {
 		return name + ":" + kind + ":" + color;
+	}
+	
+	@Override
+	public void breathe() {				//인터페이스 Breathable에서 정의한 breathe()를 구현
+		System.out.println("산소 -> 이산화탄소");	
+	}
+	
+	@Override
+	public boolean isLive() {			//인터페이스 Livable에서 정의한 isLive()를 구현
+		return true;
 	}
 	
 	

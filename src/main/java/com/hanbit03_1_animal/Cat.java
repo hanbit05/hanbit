@@ -23,5 +23,4 @@ public class Cat extends Animal {	//Animal클래스로부터 상속받음
 		return DEFAULT_NAME;
 	}
 
-	
 }
